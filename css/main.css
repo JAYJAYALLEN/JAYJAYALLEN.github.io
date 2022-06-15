@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffee20;
+  background: #ff3032;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2449,11 +2449,6 @@ ul.breadcrumb li + li:last-child {
   height: 3px;
   opacity: 0;
 }
-/************************* Header **************************/
-/* header-隐藏顶部线条 */
-.headband {
-  display: none;
-}
 /* header-顶部空白 */
 .header,
 .main-inner {
@@ -2478,16 +2473,11 @@ ul.breadcrumb li + li:last-child {
     border-radius: 0 0 $myradius $myradius;
   }
 }
-/* header-页面背景 */
 body {
-  background-image: url("$body-bg-url");
-  background-repeat: repeat;
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
   background-attachment: fixed;
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background-image: none;
-  }
+  background-size: 100% 100%;
 }
 /* Day of Mourning */
 .site-brand-container {
