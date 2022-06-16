@@ -925,12 +925,12 @@ pre .javascript .function {
 }
 @media (min-width: 1200px) {
   .main-inner {
-    width: 75%;
+    width: 100%;
   }
 }
 @media (min-width: 1600px) {
   .main-inner {
-    width: 60%;
+    width: 100%;
   }
 }
 @media (max-width: 767px) {
@@ -947,12 +947,12 @@ pre .javascript .function {
 }
 @media (min-width: 1200px) {
   .header-inner {
-    width: 75%;
+    width: 100%;
   }
 }
 @media (min-width: 1600px) {
   .header-inner {
-    width: 60%;
+    width: 100%;
   }
 }
 .site-brand-container {
@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffc4af;
+  background: #fff4ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1387,12 +1387,12 @@ pre .javascript .function {
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 75%;
+    width: 100%;
   }
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 60%;
+    width: 100%;
   }
 }
 .languages {
@@ -2154,12 +2154,12 @@ ul.breadcrumb li + li:last-child {
 }
 @media (min-width: 1200px) {
   .header {
-    width: 75%;
+    width: 100%;
   }
 }
 @media (min-width: 1600px) {
   .header {
-    width: 60%;
+    width: 100%;
   }
 }
 @media (max-width: 991px) {
@@ -2513,14 +2513,14 @@ body {
 /* 侧边圆角 */
 .header-inner,
 .sidebar-inner {
-  border-radius: 20px;
+  border-radius: 8px;
 }
 .site-brand-container {
-  border-radius: 20px 20px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 @media (max-width: 767px) {
   .site-brand-container {
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 8px 8px;
   }
 }
 /* 站点标题背景 */
@@ -2546,7 +2546,7 @@ body {
 }
 /* 二级导航菜单 */
 .sub-menu {
-  border-radius: 20px !important;
+  border-radius: 8px !important;
 }
 /* 社交媒体图标 */
 .links-of-author-item a {
@@ -2578,7 +2578,7 @@ body {
 /**********************************************************/
 /* 文章卡片 */
 .post-block {
-  border-radius: 20px !important;
+  border-radius: 8px !important;
 }
 /* 文章与页面标题 */
 .posts-expand .post-title {
@@ -2687,7 +2687,7 @@ blockquote.blockquote-center {
 /* 普通链接卡片 */
 .post-body .link-grid .link-grid-container {
   border: 2px solid #ddd;
-  border-radius: 20px;
+  border-radius: 8px;
   box-shadow: 0.2em 0.2em 0.5em rgba(0,0,0,0.2);
 }
 .post-body .link-grid .link-grid-container:hover {
@@ -2728,7 +2728,7 @@ blockquote.blockquote-center {
 .btn {
   color: #fff !important;
   border: none;
-  border-radius: 20px;
+  border-radius: 8px;
   background: #3f5973;
 }
 .btn:hover {
