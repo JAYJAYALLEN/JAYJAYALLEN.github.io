@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0599ff;
+  background: #b5d644;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2480,6 +2480,12 @@ body {
   .site-brand-container {
     border-radius: 0 0 8px 8px;
   }
+}
+/* 站点标题背景 */
+.site-brand-container {
+  background: url("C:/Users/ahem9/Desktop/123.jpg");
+  background-position: 70% 20%;
+  background-size: cover;
 }
 /* 站点副标题 */
 .site-subtitle {
