@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b5d644;
+  background: #d5ff1d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2483,7 +2483,7 @@ body {
 }
 /* 站点标题背景 */
 .site-brand-container {
-  background: url("C:/Users/ahem9/Desktop/123.jpg");
+  background: url("/images/123.jpg");
   background-position: 70% 20%;
   background-size: cover;
 }
