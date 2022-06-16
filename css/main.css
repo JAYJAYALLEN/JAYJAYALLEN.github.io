@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a31a66;
+  background: #667863;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2720,4 +2720,28 @@ blockquote.blockquote-center {
 }
 .post-body .tabs ul.nav-tabs li.tab.active a {
   color: var(--link-hover-color);
+}
+/**********************************************************/
+/************************ 按钮 ****************************/
+/**********************************************************/
+/* 默认按钮 */
+.btn {
+  color: #fff !important;
+  border: none;
+  border-radius: 8px;
+  background: #3f5973;
+}
+.btn:hover {
+  background: #0f6fbe;
+}
+/* 返回最上按钮 */
+.back-to-top {
+  background: #3f5973;
+  opacity: 0.8;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 1em;
+}
+.back-to-top:hover {
+  color: #fff;
 }
