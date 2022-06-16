@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ffb344;
+  background: #2dcfb1;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2490,19 +2490,6 @@ header.post-header {
   height: 3px;
   opacity: 0;
 }
-/********************************************************/
-/************************* 字体 **************************/
-/********************************************************/
-@font-face {
-  font-family: LXGW;
-  font-display: swap;
-  src: url("/resources/fonts/LXGWWenKaiLite-Regular.woff2");
-}
-@font-face {
-  font-family: "Long Cang";
-  font-display: swap;
-  src: url("/resources/fonts/LongCang-Regular.woff2");
-}
 /**********************************************************/
 /************************* 全站背景 ************************/
 /**********************************************************/
@@ -2521,16 +2508,11 @@ header.post-header {
     margin-top: 0;
   }
 }
-/* 背景图片 */
 body {
-  background-image: url("$body-bg-url");
-  background-repeat: repeat;
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
   background-attachment: fixed;
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background-image: none;
-  }
+  background-size: 100% 100%;
 }
 /* 选中字符颜色 */
 ::selection {
@@ -2555,14 +2537,9 @@ body {
 }
 /* 站点标题背景 */
 .site-brand-container {
-  background: url("$site-brand-bg-url");
+  background: url("/images/123.jpg");
   background-position: 70% 20%;
   background-size: cover;
-}
-/* 站点标题文字 */
-.site-title {
-  letter-spacing: 10px;
-  padding-left: 10px;
 }
 /* 站点副标题 */
 .site-subtitle {
