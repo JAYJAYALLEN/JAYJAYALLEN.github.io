@@ -1166,13 +1166,10 @@ pre .javascript .function {
   margin-bottom: 10px;
   margin-right: 10px;
   vertical-align: middle;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9a46ff;
+  background: #59a88f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2172,7 +2169,7 @@ ul.breadcrumb li + li:last-child {
 }
 .header-inner {
   background: var(--content-bg-color);
-  border-radius: 10px 10px 10px 10px;
+  border-radius: initial;
   box-shadow: initial;
   overflow: hidden;
   padding: 0;
@@ -2205,7 +2202,7 @@ ul.breadcrumb li + li:last-child {
 }
 .content-wrap {
   background: var(--content-bg-color);
-  border-radius: 10px 10px 10px 10px;
+  border-radius: initial;
   box-shadow: initial;
   box-sizing: border-box;
   padding: 40px;
@@ -2363,7 +2360,7 @@ ul.breadcrumb li + li:last-child {
 }
 .sidebar-inner {
   background: var(--content-bg-color);
-  border-radius: 10px;
+  border-radius: initial;
   box-shadow: initial;
   box-sizing: border-box;
   color: var(--text-color);
@@ -2467,4 +2464,75 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+/**********************************************************/
+/************************ 侧边栏 ***************************/
+/**********************************************************/
+/* 侧边圆角 */
+.header-inner,
+.sidebar-inner {
+  border-radius: $myradius;
+}
+.site-brand-container {
+  border-radius: $myradius $myradius 0 0;
+}
+@media (max-width: 767px) {
+  .site-brand-container {
+    border-radius: 0 0 $myradius $myradius;
+  }
+}
+/* 站点标题背景 */
+.site-brand-container {
+  background: url("$site-brand-bg-url");
+  background-position: 70% 20%;
+  background-size: cover;
+}
+/* 站点标题文字 */
+.site-title {
+  letter-spacing: 10px;
+  padding-left: 10px;
+}
+/* 站点副标题 */
+.site-subtitle {
+  color: var(--brand-color);
+  font-size: 0.85em;
+}
+/* 站点描述介绍 */
+.site-description {
+  color: var(--blockquote-color);
+  font-family: $font-family-quote;
+  font-size: 0.9em;
+}
+/* 导航菜单文字 */
+.menu-item a {
+  font-size: 0.9em;
+}
+/* 二级导航菜单 */
+.sub-menu {
+  border-radius: $myradius !important;
+}
+/* 社交媒体图标 */
+.links-of-author-item a {
+  font-size: 1.05em;
+}
+/* 文章目录、二级导航菜单、文章内tab中选中颜色橘黄色的变更 */
+.sidebar-toc-active .sidebar-nav-toc {
+  border-bottom: none;
+  color: var(--text-color);
+  font-weight: bold;
+}
+.sidebar-toc-active .sidebar-nav-toc:hover {
+  color: var(--text-color);
+}
+.sidebar-nav li.sidebar-nav-overview {
+  display: none;
+}
+.post-toc .nav a {
+  border-bottom: none;
+}
+.post-toc .nav .active>a,
+.sub-menu .menu-item-active,
+.sub-menu .menu-item a:hover {
+  border-bottom: none;
+  color: var(--link-hover-color);
 }
