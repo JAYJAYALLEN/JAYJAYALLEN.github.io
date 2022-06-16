@@ -1169,7 +1169,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #59a88f;
+  background: #85f67c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2480,12 +2480,6 @@ body {
   .site-brand-container {
     border-radius: 0 0 $myradius $myradius;
   }
-}
-/* 站点标题背景 */
-.site-brand-container {
-  background: url("$site-brand-bg-url");
-  background-position: 70% 20%;
-  background-size: cover;
 }
 /* 站点标题文字 */
 .site-title {
