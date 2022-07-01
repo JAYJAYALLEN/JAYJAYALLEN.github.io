@@ -21,7 +21,7 @@
     <link href="/2022/06/14/just-for-test/"/>
     <url>/2022/06/14/just-for-test/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="这是标题"><a class="markdownIt-Anchor" href="#这是标题"></a> 这是标题</h2><h1 id="下面是公式"><a class="markdownIt-Anchor" href="#下面是公式"></a> 下面是公式</h1><pre><code class="hljs">$$E=mc^2$$</code></pre>]]></content>
     
     
     
