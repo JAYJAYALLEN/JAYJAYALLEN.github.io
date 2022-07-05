@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://augustushsu.github.io/uploads/hexo-cover.png">
 <meta property="article:published_time" content="2022-07-04T13:49:08.000Z">
-<meta property="article:modified_time" content="2022-07-05T08:12:05.893Z">
+<meta property="article:modified_time" content="2022-07-05T14:45:48.101Z">
 <meta property="article:author" content="Ahem">
 <meta property="article:tag" content="nodejs">
 <meta property="article:tag" content="hexo">
@@ -74,6 +74,10 @@
     <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
+
+
+  
+<link rel="stylesheet" href="/css/indeximg-hover.css">
 
 
 
@@ -239,7 +243,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.2k 字
+          1.9k 字
         
       </span>
     
@@ -250,7 +254,7 @@
         
         
         
-          10 分钟
+          16 分钟
         
       </span>
     
@@ -324,19 +328,45 @@
 <p>动态网页和静态网页的区别，首先要分别了解两个概念，就是什么是静态网页，什么是动态网页，并且学会区分哪些是静态哪些是动态。</p>
 <h3 id="静态网页"><a class="markdownIt-Anchor" href="#静态网页"></a> 静态网页</h3>
 <ul>
-<li>静态网页不能简单地理解成静止不动的网页，他主要指的是网页中没有程序代码，只有HTML（即：超文本标记语言），一般后缀为.html,.htm,或者.xml等。虽然静态网页的页面一旦做成，内容就不会再改变了。但是，静态网页也包括一些能动的部分，这些主要是一些GIF动画等</li>
+<li>静态网页是指存放在服务器文件系统中实实在在的HTML（即：超文本标记语言）文件，一般后缀为.html,.htm,或者.xml等。当用户在浏览器中输入URL，浏览器就会将对应的HTML文件下载、渲染并呈现在窗口中。静态网页不能简单地理解成静止不动的网页，他主要指的是网页中没有程序代码，只有HTML。虽然静态网页的页面一旦做成，内容就不会再改变了。但是，静态网页也包括一些能动的部分，这些主要是一些GIF动画等。</li>
 <li>静态网页的打开，用户可以直接双击，并且不管任何人任何时间打开的页面的内容都是不变的。</li>
 </ul>
 <h3 id="动态网页"><a class="markdownIt-Anchor" href="#动态网页"></a> 动态网页</h3>
 <ul>
-<li>动态网页是指跟静态网页相对的一种网页编程技术。动态网页的网页文件中除了HTML标记以外，还包括一些特定功能的程序代码，这些代码可以使得浏览器和服务器可以交互，所以服务器端根据客户的不同请求动态的生成网页内容。</li>
+<li>动态网页是相对于静态网页而言的一种网页编程技术。动态网页的网页文件中除了HTML标记以外，还包括一些特定功能的程序代码，这些代码可以使得浏览器和服务器可以交互，所以服务器端根据客户的不同请求动态的生成网页内容。</li>
 <li>动态网页，与网页上的各种动画、滚动字幕等视觉上的动态效果没有直接关系，动态网页也可以是纯文字内容的，也可以是包含各种动画的内容，这些只是网页具体内容的表现形式，无论网页是否具有动态效果，只要是采用了动态网站技术（如PHP、ASP、JSP等）生成的网页都可以称为动态网页。</li>
 </ul>
 <h3 id="静态网页和动态网页的区别"><a class="markdownIt-Anchor" href="#静态网页和动态网页的区别"></a> 静态网页和动态网页的区别</h3>
+<h4 id="更新和维护"><a class="markdownIt-Anchor" href="#更新和维护"></a> 更新和维护</h4>
+<ul>
+<li>由于静态网页没有数据库的支持，当网站信息量太大时往往也会导致维护成本和制作成本的上升。而动态网页则具有更高的宽容性。</li>
+</ul>
+<h4 id="交互性"><a class="markdownIt-Anchor" href="#交互性"></a> 交互性</h4>
+<ul>
+<li>静态网页由于很多内容都是固定的，在功能方面有很大的限制，所以交互性较差</li>
+<li>动态网页则可以实现更多的功能，如用户的登录、注册、查询等</li>
+</ul>
+<h4 id="响应速度"><a class="markdownIt-Anchor" href="#响应速度"></a> 响应速度</h4>
+<ul>
+<li>静态网页内容相对固定，容易被搜索引擎检索，且不需要连接数据库，因此响应速度较快</li>
+<li>动态网页实际上并不是独立存在于服务器上的网页文件，只有当用户请求时服务器才返回一个完整的网页，其中涉及到数据的连接访问和查询等一系列过程，所以响应速度相对较慢</li>
+</ul>
+<h4 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h4>
+<ul>
+<li>由于博客只是为了展示信息，内容相对简单，所以我选择使用静态网页，简单易操作，不需要数据库管理，搭个人博客再适合不过了。</li>
+</ul>
 <h2 id="nodejs"><a class="markdownIt-Anchor" href="#nodejs"></a> Node.js</h2>
+<p>我们知道在网页开发中，分为前端和后端（服务端），我们写前端一般就要用到JavaScript，可以在浏览器里运行JS的代码，Chrome浏览器的内核也就是V8引擎，它可以把JavaScript代码编译成machine code，这样一来电脑就可以很轻松的理解我们写的JS代码。</p>
+<ul>
+<li>Node是V8引擎的容器，并且Node是由C++写的，所以NodeJS可以让JS代码脱离浏览器运行在服务器上，NodeJS还可以读写电脑上的文件、连接数据库、充当Web服务器</li>
+</ul>
+<div class="note note-secondary">
+            <p>国外有一篇非常好的介绍Node.js的文章，从原理入手讲解，下面是原文地址：<br /><a target="_blank" rel="noopener" href="https://www.sitepoint.com/node-js-is-the-new-black/"><font color=blue>https://www.sitepoint.com/node-js-is-the-new-black/</font></a></p><p>更多关于Node.js的内容，请查看<a target="_blank" rel="noopener" href="https://nodejs.org/"><font color=blue>Node.js的官网</font></a></p>
+          </div>
 <h2 id="hexo"><a class="markdownIt-Anchor" href="#hexo"></a> Hexo</h2>
 <h2 id="github-pages"><a class="markdownIt-Anchor" href="#github-pages"></a> GitHub Pages</h2>
 <h1 id="正文"><a class="markdownIt-Anchor" href="#正文"></a> 正文</h1>
+<h4 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h4>
 
                 
               </div>
