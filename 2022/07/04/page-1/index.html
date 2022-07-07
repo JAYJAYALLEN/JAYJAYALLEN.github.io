@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://augustushsu.github.io/uploads/hexo-cover.png">
 <meta property="article:published_time" content="2022-07-04T13:49:08.000Z">
-<meta property="article:modified_time" content="2022-07-07T13:30:41.333Z">
+<meta property="article:modified_time" content="2022-07-07T15:34:08.206Z">
 <meta property="article:author" content="Ahem">
 <meta property="article:tag" content="nodejs">
 <meta property="article:tag" content="hexo">
@@ -244,7 +244,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          4.8k 字
+          5.7k 字
         
       </span>
     
@@ -255,7 +255,7 @@
         
         
         
-          41 分钟
+          48 分钟
         
       </span>
     
@@ -387,7 +387,7 @@
 <h1 id="正文"><a class="markdownIt-Anchor" href="#正文"></a> 正文</h1>
 <p>下面正式开始搭建属于年轻人的第一个网站。</p>
 <div class="note note-secondary">
-            <p>TIP<br />系统类型：MACOS</p><p>注：由于那台Windows系统的电脑上我已经搭建好了，为了不破坏环境就不演示Windows下的操作步骤了，但基本流程差不多。想了解更多Windows的详细操作步骤请移步至<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/102592286"><font color=blue>从零开始搭建个人博客（超详细）</font></a></p>
+            <p>TIP<br />机型：MacBook Air(M1,2020)<br />系统类型：macOS Monterey ; version(12.4)</p><p>注：由于那台Windows系统的电脑上我已经搭建好了，为了不破坏环境就不演示Windows下的操作步骤了，但基本流程差不多。想了解更多Windows的详细操作步骤请移步至<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/102592286"><font color=blue>从零开始搭建个人博客（超详细）</font></a></p>
           </div>
 <h2 id="注册github和git安装"><a class="markdownIt-Anchor" href="#注册github和git安装"></a> 注册GitHub和git安装</h2>
 <ul>
@@ -466,11 +466,11 @@
 <h4 id="提交文件详细步骤"><a class="markdownIt-Anchor" href="#提交文件详细步骤"></a> 提交文件详细步骤</h4>
 <ul>
 <li>
-<p>首先，进入GitHub个人主页，进入新建的text项目，点击<span class="label label-success">code</span>，复制SSH的地址<br />
+<p>首先，进入GitHub个人主页，进入新建的text项目，点击<span class="label label-default">code</span>，复制SSH的地址<br />
 <img src="/img/post1/git9.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
 </li>
 <li>
-<p>在电脑上新建一个文件夹test，然后新建位于文件夹位置的终端窗口，接下来输入<span class="label label-default">git clone git</span>，将远程仓库clone到本地，如下图：<br />
+<p>在电脑上新建一个文件夹test，然后新建位于文件夹位置的终端窗口，接下来输入<span class="label label-default">git clone git</span>，将远程仓库clone到本地，然后打开test文件夹查看是否和远程仓库一致，如下图：<br />
 <img src="/img/post1/git10.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
 </li>
 <li>
@@ -506,31 +506,45 @@
 </li>
 </ul>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">brew install <span class="hljs-keyword">node</span><span class="hljs-title"></span><br></code></pre></td></tr></table></figure>
+<div class="note note-danger">
+            <p>可能又是M1芯片的原因，它又双叒叕报错了</p><p>报错代码为 Error: node: Failed to download resource “icu4c”</p>
+          </div>
 <ul>
-<li>用 node -v 和 npm -v 命令检查版本，如下图<br />
-<img src="/img/post1/git16.png" srcset="/img/loading.gif" lazyload alt="" /></li>
+<li>解决方案如下（在Homebrew中重装两个模块，gettext和pcre2）：</li>
+</ul>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>brew reinstall gettext <br><span class="hljs-variable">$ </span>brew reinstall pcre2<br></code></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>这样就完成啦~<br />
+<img src="/img/post1/node.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+</li>
+<li>
+<p>用 node -v 和 npm -v 命令检查版本，如下图<br />
+<img src="/img/post1/node2.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+</li>
 </ul>
 <h3 id="测试"><a class="markdownIt-Anchor" href="#测试"></a> 测试</h3>
 <ul>
-<li>输入<span class="label label-default">npm install webpack -g</span>，出现下图即表示成功</li>
+<li>输入<span class="label label-default">npm install webpack -g</span>，出现下图即表示成功<br />
+<img src="/img/post1/node3.jpg" srcset="/img/loading.gif" lazyload alt="" /></li>
 </ul>
 <h2 id="安装hexo"><a class="markdownIt-Anchor" href="#安装hexo"></a> 安装Hexo</h2>
 <h3 id="创建一个pages"><a class="markdownIt-Anchor" href="#创建一个pages"></a> 创建一个pages</h3>
 <ul>
-<li>Hexo是我们的个人博客网站的框架，在安装之前，我们要在GitHub上创建一个仓库，并且仓库的名称格式要是：“<a target="_blank" rel="noopener" href="http://xn--eqr924avxo.github.io">用户名.github.io</a>”,如下图:<br />
-<img src="/img/post1/git17.png" srcset="/img/loading.gif" lazyload alt="" /></li>
+<li>Hexo是我们的个人博客网站的框架，在安装之前，我们要在GitHub上创建一个仓库，并且仓库的名称格式要是：“<a target="_blank" rel="noopener" href="http://xn--eqr924avxo.github.io">用户名.github.io</a>”,如下图:</li>
 </ul>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/post1/pages.jpg" srcset="/img/loading.gif" lazyload alt="" /></div><div class="group-image-wrap"><img src="/img/post1/pages1.jpg" srcset="/img/loading.gif" lazyload alt="" /></div></div></div>
 <h3 id="安装hexo-2"><a class="markdownIt-Anchor" href="#安装hexo-2"></a> 安装hexo</h3>
 <ul>
 <li>
 <p>在桌面上新建一个blog文件夹</p>
 </li>
 <li>
-<p>打开终端输入npm命令安装hexo</p>
+<p>打开终端cd到blog目录下输入npm命令安装hexo</p>
 </li>
 </ul>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">sudo npm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure>
-<p><img src="/img/post1/git18.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p><img src="/img/post1/pages2.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
 <ul>
 <li>
 <p>安装完成后，输入<span class="label label-default"> hexo init</span>命令初始化博客</p>
@@ -541,7 +555,8 @@
 </ul>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hexo s</span><br></code></pre></td></tr></table></figure>
 <ul>
-<li>然后打开http://localhost:4000/就可以看到部署好的网页了</li>
+<li>然后打开http://localhost:4000/就可以看到部署好的网页了<br />
+<img src="/img/post1/pages3.jpg" srcset="/img/loading.gif" lazyload alt="" /></li>
 </ul>
 <h3 id="将hexo部署到github"><a class="markdownIt-Anchor" href="#将hexo部署到github"></a> 将hexo部署到GitHub</h3>
 <ul>
@@ -549,24 +564,58 @@
 </ul>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">deploy:<br>  type: <span class="hljs-string">&#x27;git&#x27;</span><br>  repo: git@github<span class="hljs-selector-class">.com</span>:你的用户名/你的用户名<span class="hljs-selector-class">.github</span><span class="hljs-selector-class">.io</span><span class="hljs-selector-class">.git</span><br>  branch: main<br></code></pre></td></tr></table></figure>
 <ul>
-<li>打开git bash，cd到blog文件夹中，安装git部署插件，执行如下命令：</li>
+<li>打开终端，cd到blog文件夹中，安装git部署插件，执行如下命令：</li>
 </ul>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">sudo npm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
 <ul>
-<li>然后执行经典三连：</li>
+<li>
+<p>这样即为安装成功<br />
+<img src="/img/post1/pages3_1.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+</li>
+<li>
+<p>然后执行经典三连：</p>
+</li>
 </ul>
 <figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs verilog">hexo clean  #清除缓存文件 db<span class="hljs-variable">.json</span> 和已生成的静态文件 public<br>hexo g      #生成网站静态文件到默认设置的 public 文件夹(hexo <span class="hljs-keyword">generate</span> 的缩写)<br>hexo d      #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)<br></code></pre></td></tr></table></figure>
 <ul>
-<li>等上一段时间(可能很久)，就可以输入https://xxx.github.io查看博客了</li>
+<li>等上一段时间(可能很久)，就可以输入https://xxx.github.io查看博客了<br />
+<img src="/img/post1/pages4.jpg" srcset="/img/loading.gif" lazyload alt="" /></li>
 </ul>
 <h2 id="域名解析"><a class="markdownIt-Anchor" href="#域名解析"></a> 域名解析</h2>
 <h2 id="设置fluid主题"><a class="markdownIt-Anchor" href="#设置fluid主题"></a> 设置Fluid主题</h2>
+<h3 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h3>
+<h3 id="快速开始"><a class="markdownIt-Anchor" href="#快速开始"></a> 快速开始</h3>
+<h4 id="获取主题最新版本"><a class="markdownIt-Anchor" href="#获取主题最新版本"></a> 获取主题最新版本</h4>
+<p><strong>方式一：</strong></p>
+<p>Hexo 5.0.0 版本以上，推荐通过 npm 直接安装，进入博客目录执行命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
+<p>然后在博客目录下创建 <code>_config.fluid.yml</code>，将主题的 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml">_config.yml</a> 内容复制进去。</p>
+<p><strong>方式二：</strong></p>
+<p>下载 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/releases">最新 release 版本</a> 解压到 themes 目录，并将解压出的文件夹重命名为 <code>fluid</code>。</p>
+<h4 id="3-指定主题"><a class="markdownIt-Anchor" href="#3-指定主题"></a> 3. 指定主题</h4>
+<p>如下修改 Hexo 博客目录中的 <code>_config.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  <span class="hljs-comment"># 指定主题</span><br><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  <span class="hljs-comment"># 指定语言，会影响主题显示的语言，按需修改</span><br></code></pre></td></tr></table></figure>
+<h4 id="4-创建关于页"><a class="markdownIt-Anchor" href="#4-创建关于页"></a> 4. 创建「关于页」</h4>
+<p>首次使用主题的「关于页」需要手动创建：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo new page about<br></code></pre></td></tr></table></figure>
+<p>创建成功后，编辑博客目录下 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性。</p>
+<p>修改后的文件示例如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">about</span><br><span class="hljs-attr">layout:</span> <span class="hljs-string">about</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">这里写关于页的正文，支持</span> <span class="hljs-string">Markdown,</span> <span class="hljs-string">HTML</span><br></code></pre></td></tr></table></figure>
+<h2 id="更新主题"><a class="markdownIt-Anchor" href="#更新主题"></a> 更新主题</h2>
+<p>更新主题的方式<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/start/#%E6%9B%B4%E6%96%B0%E4%B8%BB%E9%A2%98">参照这里</a>。</p>
+<ul>
+<li>大功告成！<br />
+<img src="/img/post1/pages5.jpg" srcset="/img/loading.gif" lazyload alt="" /></li>
+</ul>
 <h4 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h4>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.html.cn/qa/frontend/19655.html">https://www.html.cn/qa/frontend/19655.html</a></li>
 <li><a target="_blank" rel="noopener" href="https://hexo.io/docs/">https://hexo.io/docs/</a></li>
 <li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/GitHub_Pages">https://zh.wikipedia.org/wiki/GitHub_Pages</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/102592286">https://zhuanlan.zhihu.com/p/102592286</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37390306/article/details/119831091">https://blog.csdn.net/qq_37390306/article/details/119831091</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000038373795">https://segmentfault.com/a/1190000038373795</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid#readme">https://github.com/fluid-dev/hexo-theme-fluid#readme</a></li>
 </ul>
 
                 
