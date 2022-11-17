@@ -1,0 +1,778 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Ahem">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="因为平时会带着自己的相机拍摄延时类型的摄影题材，生成的视频必不可少的会发生画面抖动的问题，大部分人都是简单的在剪辑软件里做一下稳定就导出视频了，那么为了精益求精做出完美不抖动的视频，就需要用到针对到帧的跟踪稳定，AE在点跟踪运动方面是独树一帜的老大哥，然而由于平时我自己用达芬奇比较多一点，所以迫切的想要找一个平替AE的方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="达芬奇对比PR+AE在视频运动稳定方面的优劣">
+<meta property="og:url" content="http://example.com/2022/11/17/page_2/index.html">
+<meta property="og:site_name" content="Ahem の Blog">
+<meta property="og:description" content="因为平时会带着自己的相机拍摄延时类型的摄影题材，生成的视频必不可少的会发生画面抖动的问题，大部分人都是简单的在剪辑软件里做一下稳定就导出视频了，那么为了精益求精做出完美不抖动的视频，就需要用到针对到帧的跟踪稳定，AE在点跟踪运动方面是独树一帜的老大哥，然而由于平时我自己用达芬奇比较多一点，所以迫切的想要找一个平替AE的方案。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/spwd.png">
+<meta property="article:published_time" content="2022-11-17T08:28:08.000Z">
+<meta property="article:modified_time" content="2022-11-17T12:22:21.582Z">
+<meta property="article:author" content="Ahem">
+<meta property="article:tag" content="摄影">
+<meta property="article:tag" content="剪辑">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/spwd.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>达芬奇对比PR+AE在视频运动稳定方面的优劣 - Ahem の Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/KaTeX/0.15.6/katex.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/css/indeximg-hover.css">
+<link rel="stylesheet" href="/css/mac.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":50,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Ahem の Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Ahem の Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/">
+                    
+                    文章合集
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    
+                    标签
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/spwd.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="达芬奇对比PR+AE在视频运动稳定方面的优劣"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-17 16:28" pubdate>
+          2022年11月17日
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">达芬奇对比PR+AE在视频运动稳定方面的优劣</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <div class="note note-success">
+            <p>本文参考自网络，如有侵权告知即删。<br />此外，本文开启了评论留言，如有问题的可以在下方评论区留言。</p><p>本文作者: Ahem<br />原文地址：<a target="_blank" rel="noopener" href="https://aheeem.xyz/2022/07/04/page_2/">https://aheeem.xyz/2022/07/04/page_2/</a></p>
+          </div>
+<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>由于平时会带着自己的相机拍摄延时类型的摄影题材，生成的视频必不可少的会发生画面抖动的问题，大部分人都是简单的在剪辑软件里做一下稳定就导出视频了，那么为了精益求精做出完美不抖动的视频，就需要用到针对到帧的跟踪稳定，AE在点跟踪运动方面是独树一帜的老大哥，然而由于平时我自己用达芬奇比较多一点，所以迫切的想要找一个平替AE的解决方案。</p>
+<h2 id="传统的稳定方案"><a class="markdownIt-Anchor" href="#传统的稳定方案"></a> 传统的稳定方案</h2>
+<h3 id="pr单独稳定"><a class="markdownIt-Anchor" href="#pr单独稳定"></a> PR单独稳定</h3>
+<p>说到视频稳定，大家肯定想到PR的变形稳定器，确实是一个很好用的工具，基本上大部分前期拍摄的比较“优质”的抖动视频都可以解决，只要在特效库里搜索变形稳定器，直接把它拖到时间轴里，pr就可以自动进行分析把他调整为一个稳定的视频，这里可以适当调整平滑度（平滑度越高，视频裁切比率越高）。但pr让人难以忍受的就是他的分析速度实在是太慢了，等接下来我介绍达芬奇的时候会再次提到。<br />
+<img src="/img/post2/pr1.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+ </p>
+<h3 id="prae跟踪稳定"><a class="markdownIt-Anchor" href="#prae跟踪稳定"></a> PR+AE跟踪稳定</h3>
+<p>上述的稳定仅限于对视频稳定度要求不那么高的使用，如果你接的是商业单，甲方要求视频要非常的有质感且稳定或者还有一种情况，你自己忍受不了有一丁点晃动，就是想要把她做到完美，那么该如何解决，此时AE强大的2D平面上的跟踪就起到了决定性的作用，当然在ae当中也有他自己的变形稳定器，我发现在ae中的变形稳定器的效果会比pr稍微好一点，所以如果你不想麻烦又想将视频做的稍微好一定的话，可以尝试在ae中做变形稳定。<br />
+ </p>
+<ul>
+<li>首先把fx变形稳定特效删掉，右击需要稳定的视频片段，选“使用After Effects合成替换”</li>
+<li>进入AE选中视频，打开跟踪器，选择稳定运动，将跟踪点放到对比度较大的地方</li>
+</ul>
+<div class="note note-secondary">
+            <p>注意：小框：用来框选你想跟踪的东西；大框：软件的计算范围，就是在下一帧，软件会在这个大框里寻找上一帧你小框里的图案，找到了小框里相同的图案，就会整体位移过去，以此类推，就完成了跟踪</p>
+          </div>
+<p><img src="/img/post2/ae1.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+ </p>
+<ul>
+<li>随便选择一帧向前向后分析，分析完之后按U显示所有关键帧，将跟踪不准的关键帧位置重新手动调整并将之后的关键帧删除重新分析</li>
+<li>跟踪完之后点击应用，确定X、Y。现在的意思就是把我们刚才跟踪点作为视频的最中央，固定在视频中间，然后整个画面会跟着跟踪点的范围做不同的调动，这就导致了下图中黑框的出现<br />
+<img src="/img/post2/ae2.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+ </li>
+<li>按s来对视频进行缩放使得视频从头到尾都在框框内<br />
+<img src="/img/post2/ae3.png" srcset="/img/loading.gif" lazyload alt="" /><br />
+ </li>
+<li>按下键盘上的预合成快捷键【Ctrl+Shift+C】，新建一个预合成，记得选中&quot;将所有属性移动到新合成&quot;</li>
+</ul>
+<div class="note note-danger">
+            <p>如果视频有点抖动的话，可以在确认完之后再加一个变形稳定器。</p>
+          </div>
+<ul>
+<li>在一切都确认无误后，从AE切换到PR，右击视频片段渲染和替换，然后将视频导出就算完成了。<br />
+ </li>
+</ul>
+<h2 id="达芬奇专业版跟踪稳定"><a class="markdownIt-Anchor" href="#达芬奇专业版跟踪稳定"></a> 达芬奇专业版跟踪稳定</h2>
+<p>达芬奇软件内部可以直接通过效果库的跟踪运动来实现和AE几乎完全一样的点跟踪，而且比AE更快并且更容易操作，不需要pr、qe两个软件来回切换。至此，每当我拍延时的时候从lr导出序列到达芬奇就可以直接进行剪辑稳定调色的工作。<br />
+目前我的工作流：LRT关键帧去闪 → 导入LR进行调色批处理 → 回到LRT做圣杯模式关键帧过度导出序列 → 导入达芬奇进行剪辑调色稳定等操作 → 导出<br />
+传统工作流：LRT关键帧去闪 → 导入LR进行调色批处理 → 回到LRT做圣杯模式关键帧过度导出序列 → 导入pr剪辑 → 链接ae做稳定 → 回到pr做剪辑 → 最后导出<br />
+下面介绍如何使用达芬奇做点跟踪运动：</p>
+<ul>
+<li>导入需要做稳定的视频，进入调色界面搜索运动匹配效果串联节点，单击需要跟踪的位置会出现一个类似于AE的跟踪框</li>
+</ul>
+<div class="group-image-container"><div class="group-image-row"><div class="group-image-wrap"><img src="/img/post2/dv1.PNG" srcset="/img/loading.gif" lazyload alt="" /></div><div class="group-image-wrap"><img src="/img/post2/dv22.PNG" srcset="/img/loading.gif" lazyload alt="" /></div></div></div>
+<ul>
+<li>启用缩放和旋转再左右做跟踪<br />
+<img src="/img/post2/dv2.PNG" srcset="/img/loading.gif" lazyload alt="" /><br />
+ </li>
+<li>如果跟踪点跟歪了，找到那个点刷新跟踪<br />
+<img src="/img/post2/dv3.PNG" srcset="/img/loading.gif" lazyload alt="" /><br />
+ </li>
+<li>在节点区再导入一份视频作为外部蒙版再添加一个串行节点，如下图<br />
+<img src="/img/post2/dv4.PNG" srcset="/img/loading.gif" lazyload alt="" /><br />
+ </li>
+<li>回到剪辑界面右键新建复合片段<br />
+<img src="/img/post2/dv5.PNG" srcset="/img/loading.gif" lazyload alt="" /><br />
+ </li>
+<li>最后导出视频<br />
+<img src="/img/post2/dv6.PNG" srcset="/img/loading.gif" lazyload alt="" /><br />
+ </li>
+</ul>
+<h2 id="结语"><a class="markdownIt-Anchor" href="#结语"></a> 结语</h2>
+<p>最后，达芬奇这几年的发展真的很好，要想做到真正的一体化剪辑软件还有很长一段路要走，我们大家一起期待他的成长！有喜欢摄影的朋友们也欢迎和我一起探讨！</p>
+<h4 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/283040186/answer/429000169">https://www.zhihu.com/question/283040186/answer/429000169</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=BjAJkgITHZ0">https://www.youtube.com/watch?v=BjAJkgITHZ0</a></li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%91%84%E5%BD%B1/">#摄影</a>
+      
+        <a href="/tags/%E5%89%AA%E8%BE%91/">#剪辑</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>达芬奇对比PR+AE在视频运动稳定方面的优劣</div>
+      <div>http://example.com/2022/11/17/page_2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Ahem</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年11月17日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/05/page/" title="自行车车祸处理流程">
+                        <span class="hidden-mobile">自行车车祸处理流程</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.5.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.5.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline-comments-62me45w5n-jayjayallen.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"commT":"严禁发表任何言语侮辱、黄色暴力、政治言论，违规者删评处理。文明交流，欢迎大家评论留言☺"},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+    <script>
+    $(document).ready(function(){
+        $('#wl-edit').attr('placeholder',"严禁发表任何言语侮辱、黄色暴力、政治言论，违规者删评处理。文明交流，欢迎大家评论留言☺");
+    })
+    </script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right"},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}});</script></body>
+</html>
